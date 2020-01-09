@@ -7,7 +7,7 @@ steps:
   image: plugins/docker
   settings:
     dockerfile: Dockerfile.5.6
-    repo: "digtux/${CI_REPO}"
+    repo: "${CI_REPO}"
     tags:
     - '${DRONE_BRANCH/\//-}-${DRONE_COMMIT_SHA:0:8}'
     username: digtux
