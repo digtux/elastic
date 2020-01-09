@@ -3,14 +3,10 @@ kind: pipeline
 name: container
 steps:
 
-  image: ubuntu:18.04
-  commands:
-    - env | sort
-
 - name: publish
   image: plugins/gcr
   settings:
-    dockerfile: 5.6/Dockerfile
+    dockerfile: Dockerfile.5.6
     repo: "${CI_REPO}"
     tags:
     - '${DRONE_BRANCH/\//-}-${DRONE_COMMIT_SHA:0:8}'
